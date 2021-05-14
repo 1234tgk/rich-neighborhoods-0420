@@ -1,4 +1,49 @@
 .members {
-  display: relative;
-  height: 1000px;
+  width: 800px;
+}
+
+.title {
+  padding: 20px;
+}
+
+.table {
+  width: 50%;
+  margin: 0 auto;
+  padding: 0px 20px;
+}
+
+.members colgroup:nth-child(1) {
+  width: 50%;
+}
+
+.members colgroup:nth-child(2) {
+  width: 50%;
+}
+
+.members thead th {
+  padding: 20px 0px;
+  border-bottom: 2px solid var(--color-black);
+}
+
+.members tr td {
+  padding: 10px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-left: 100px;
+}
+
+.form input {
+  padding: 2px;
+  margin: 10px;
+}
+
+.button {
+  width: 70px;
+  padding: 2px;
+  margin: 10px;
 }
