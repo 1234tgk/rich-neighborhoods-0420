@@ -1,4 +1,25 @@
 .members {
-  display: relative;
   height: 1000px;
+}
+
+.title {
+  padding: 20px;
+}
+
+.table {
+  width: 50%;
+  margin: 0 auto;
+  padding: 0px 20px;
+}
+
+.members colgroup:nth-child(1) {
+  width: 65%;
+}
+
+.members colgroup:nth-child(2) {
+  width: 35%;
+}
+
+.thead tr {
+  border-bottom: 1px solid var(--color-grey);
 }

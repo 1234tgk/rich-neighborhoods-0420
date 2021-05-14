@@ -7,8 +7,8 @@ const Members = ({memberData}) => {
 
   return (
     <div className={styles.members}>
-      <h1>Members</h1>
-      <table>
+      <h2 className={styles.title}>Members</h2>
+      <table className={styles.table}>
         <colgroup>
           <col />
           <col />
