@@ -26,6 +26,11 @@ const Members = ({memberData}) => {
           }
         </tbody>
       </table>
+      <form className={styles.form}>
+        <input type="text" defaultValue="Name"></input>
+        <input type="text" defaultValue="Status"></input>
+        <button className={styles.button}>Add</button>
+      </form>
     </div>
   );
 };

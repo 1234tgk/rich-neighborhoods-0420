@@ -1,3 +1,49 @@
 .budget {
-  background: yellow;
+  height: 100%;
+}
+
+.title {
+  padding: 20px;
+}
+
+.table {
+  width: 50%;
+  margin: 0 auto;
+  padding: 0px 20px;
+}
+
+.budget colgroup:nth-child(1) {
+  width: 50%;
+}
+
+.budget colgroup:nth-child(2) {
+  width: 50%;
+}
+
+.budget thead th {
+  padding: 20px 0px;
+  border-bottom: 2px solid var(--color-black);
+}
+
+.budget tr td {
+  padding: 10px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-left: 100px;
+}
+
+.form input {
+  padding: 2px;
+  margin: 10px;
+}
+
+.button {
+  width: 70px;
+  padding: 2px;
+  margin: 10px;
 }

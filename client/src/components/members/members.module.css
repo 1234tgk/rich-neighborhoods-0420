@@ -1,5 +1,5 @@
 .members {
-  height: 1000px;
+  width: 800px;
 }
 
 .title {
@@ -13,13 +13,37 @@
 }
 
 .members colgroup:nth-child(1) {
-  width: 65%;
+  width: 50%;
 }
 
 .members colgroup:nth-child(2) {
-  width: 35%;
+  width: 50%;
 }
 
-.thead tr {
-  border-bottom: 1px solid var(--color-grey);
+.members thead th {
+  padding: 20px 0px;
+  border-bottom: 2px solid var(--color-black);
+}
+
+.members tr td {
+  padding: 10px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-left: 100px;
+}
+
+.form input {
+  padding: 2px;
+  margin: 10px;
+}
+
+.button {
+  width: 70px;
+  padding: 2px;
+  margin: 10px;
 }

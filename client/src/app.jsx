@@ -6,7 +6,8 @@ import Budget from './components/budget/budget';
 import Main from './components/main/main';
 import Members from './components/members/members';
 import Footer from './components/footer/footer';
-import memberData from '../src/data/data';
+import memberData from '../src/data/member';
+import budgetData from '../src/data/budget';
 
 const App = () => {
   return (
@@ -16,8 +17,8 @@ const App = () => {
         <BrowserRouter>
           <Switch>
             {/* <Route exact path="/"><Main /></Route> */}
-            {/* <Route path="/budget"><Budget /></Route> */}
-            <Route path="/dashboard"><Members memberData={memberData} /></Route>
+            <Route path="/budget"><Budget budgetData={budgetData} /></Route>
+            {/* <Route path="/dashboard"><Members memberData={memberData} /></Route> */}
           </Switch>
         </BrowserRouter>
       </div>

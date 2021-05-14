@@ -3,18 +3,18 @@ import styles from './member.module.css';
 
 const Member = ({member}) => {
   return (
-    <div className={styles.member}>
+    <tr className={styles.member}>
       {
-        <tr>
+        <>
           <td className={styles.name}>
             {member.name}
           </td>
           <td className={styles.status}>
             {member.status}
           </td>
-        </tr>
+        </>
       }
-    </div>
+    </tr>
   );
 };
 
