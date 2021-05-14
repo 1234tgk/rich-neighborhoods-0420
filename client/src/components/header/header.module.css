@@ -5,4 +5,7 @@
   width: 100%;
   height: 80px;
   background: var(--color-brown);
+
+  position: sticky;
+  top: 0;
 }
