@@ -11,9 +11,7 @@ import memberData from '../src/data/data';
 const App = () => {
   return (
     <div className={styles.app}>
-      <div className={styles.header}>
-        <Header />
-      </div>
+      <Header />
       <div className={styles.container}>
         <BrowserRouter>
           <Switch>
@@ -23,9 +21,7 @@ const App = () => {
           </Switch>
         </BrowserRouter>
       </div>
-      <div className={styles.footer}>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 };
