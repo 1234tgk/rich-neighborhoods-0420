@@ -13,10 +13,12 @@ git checkout <branch-name>
   \
 If at some point you need to update your master during your work...
 ```
-git checkout master
+git add -all
+git commit -m "<commit-message>"
+git checkout main
 git pull
 git checkout <branch-name>
-git rebase master
+git rebase main
 ```
   \
 Once you make changes to your branches...
