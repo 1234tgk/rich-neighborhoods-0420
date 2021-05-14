@@ -17,6 +17,9 @@ function App() {
         >
           Learn React
         </a>
+        <p>
+          Testing purpose only.
+        </p>
       </header>
     </div>
   );
