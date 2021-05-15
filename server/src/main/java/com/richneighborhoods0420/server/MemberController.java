@@ -31,7 +31,7 @@ public class MemberController {
     public Member activateMember(@PathVariable long id) {
         Member updatedMember = memberRepository.findById(id)
                 .map(member -> {
-                    member.setExpiry_date(LocalDate.now().plusMonths(1).toString());
+                    member.setExpiryDate(LocalDate.now().plusMonths(1).toString());
                     return memberRepository.save(member);
                 })
                 .orElseGet(() -> {
