@@ -1,8 +1,8 @@
-You need to add application.properties in this folder
+# You need to add application.properties in this folder
 
-Content to add:
+# Content to add:
 spring.datasource.url = jdbc:mysql://{JDBC connection string}:{port}/{db_name}
 spring.datasource.username = {user}
 spring.datasource.password = {password}
 spring.jpa.hibernate.ddl-auto = update
-spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQLDialect
