@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './footer.module.css';
 
 const Footer = () => {
@@ -6,17 +7,17 @@ const Footer = () => {
     <div className={styles.footer}>
       <div className={styles.left}>
         <ul className={styles.menu}>
-          <li>About</li>
-          <li>Club</li>
-          <li>Contributors</li>
+          <li>ABOUT</li>
+          <Link to="/club"><li className={styles.list}>Club</li></Link>
+          <Link to="/"><li className={styles.list}>Contributors</li></Link>
         </ul>
         <ul className={styles.menu}>
-          <li>Contact</li>
-          <li>Social</li>
+          <li>CONTACT</li>
+          <Link to="/"><li className={styles.list}>Social</li></Link>
         </ul>
       </div>
       <div className={styles.right}>
-        Email us for hiring!<br />
+        <h4>Email us for hiring!</h4>
         <a href="mailto:jeankang.dev@gmail.com"><button className={styles.button}>Do the right thing</button></a>
       </div>
     </div>
@@ -24,3 +25,12 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+
+{/* <h3 className={styles.title}>What we learned</h3>
+<p>
+  Front-end: React, JavaScript, HTML, CSS, Redux, Postman <p />
+  Back-end: AWS, Linode, Firebase
+</p>
+<h3 className={styles.title}>What we're interested in</h3> */}

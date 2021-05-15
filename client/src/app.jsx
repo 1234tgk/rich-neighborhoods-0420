@@ -8,21 +8,23 @@ import Members from './components/members/members';
 import Footer from './components/footer/footer';
 import memberData from '../src/data/member';
 import budgetData from '../src/data/budget';
+import Club from './components/club/club';
 
 const App = () => {
   return (
     <div className={styles.app}>
-      <Header />
       <div className={styles.container}>
         <BrowserRouter>
+          <Header />
           <Switch>
             <Route exact path="/"><Main /></Route>
             <Route path="/budget"><Budget budgetData={budgetData} /></Route>
             <Route path="/members"><Members memberData={memberData} /></Route>
+            <Route path="/club"><Club /></Route>
           </Switch>
+          <Footer />
         </BrowserRouter>
       </div>
-      <Footer />
     </div>
   );
 };

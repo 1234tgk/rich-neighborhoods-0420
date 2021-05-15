@@ -1,0 +1,38 @@
+.club {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
+.dream,
+.reality {
+  padding-bottom: 40px;
+}
+
+.title {
+  font-weight: 450;
+  text-decoration: underline;
+  text-underline-position: under;
+  padding: 20px;
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  height: 200px;
+  padding: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  img {
+    height: 100px;
+    padding: 2px;
+  }
+}
