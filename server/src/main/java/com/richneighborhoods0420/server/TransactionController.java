@@ -1,6 +1,7 @@
 package com.richneighborhoods0420.server;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +20,7 @@ public class TransactionController {
     private TransactionRepository transactionRepository;
 
     @GetMapping
-    public Iterable<Transaction> findAllTransactions() { return transactionRepository.findAll(); }
+    public Iterable<Transaction> findAllTransactions() { return transactionRepository.findAll(Sort.by(Sort.Direction.ASC, "date")); }
 
     @GetMapping("/balance")
     public List<BalanceRow> makeBalanceRow() {
