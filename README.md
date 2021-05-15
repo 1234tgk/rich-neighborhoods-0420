@@ -44,7 +44,7 @@ use testneighbor;
 create table member (
 id bigint not null auto_increment,
 name varchar(50) not null,
-status varchar(10) not null,
+expiry_date varchar(12) not null,
 primary key (id)
 );
 
