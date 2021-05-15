@@ -25,7 +25,6 @@ public class TransactionController {
         return transactionRepository.save(transaction);
     }
 
-    // no need to delete member, but here it is anyway
     @DeleteMapping("/{id}")
     public void deleteTransaction(@PathVariable long id) {
         transactionRepository.deleteById(id);
