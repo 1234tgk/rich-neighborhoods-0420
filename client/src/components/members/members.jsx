@@ -1,9 +1,29 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
+import { createMember, getMembers } from '../../api';
 import Member from '../member/member';
 import styles from './members.module.css';
 
-const Members = ({memberData}) => {
-  const [members, setMembers] = useState(memberData);
+const Members = () => {
+  const [members, setMembers] = useState([]);
+  const [nameInput, setNameInput] = useState('');
+  const [statusInput, setStatusInput] = useState('');
+  useEffect(() => {
+    getMembers().then((res) => {
+      setMembers(res);
+    });
+  },[]);
+
+  const addHandler = (event) => {
+    event.preventDefault();
+
+    createMember(nameInput, statusInput).then(() => {
+      getMembers().then((res) => {
+        setMembers(res);
+      });
+      setNameInput('');
+      setStatusInput('');
+    });
+  };
 
   return (
     <div className={styles.members}>
@@ -27,10 +47,10 @@ const Members = ({memberData}) => {
         </tbody>
       </table>
       <h3 className={styles.title}>Add Members</h3>
-      <form className={styles.form}>
-        <input type="text" defaultValue="Name"></input>
-        <input type="text" defaultValue="Status"></input>
-        <button className={styles.button}>ADD</button>
+      <form onSubmit={addHandler} className={styles.form}>
+        <input type="text" placeholder="Name" value={nameInput} onChange={e => setNameInput(e.target.value)} />
+        <input type="text" placeholder="Status" value={statusInput} onChange={e => setStatusInput(e.target.value)} />
+        <input type="submit" className={styles.button} value="ADD"/>
       </form>
     </div>
   );

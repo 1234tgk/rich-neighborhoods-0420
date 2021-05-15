@@ -21,7 +21,7 @@ const App = () => {
           <Switch>
             <Route exact path="/"><Main /></Route>
             <Route path="/budget"><Budget budgetData={budgetData} /></Route>
-            <Route path="/members"><Members memberData={memberData} /></Route>
+            <Route path="/members"><Members /></Route>
             <Route path="/club"><Club /></Route>
             <Route path="/contributors"><Contributors /></Route>
             <Route path="/contact"><Contact /></Route>
