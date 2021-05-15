@@ -27,9 +27,19 @@ public class MemberController {
         return memberRepository.save(member);
     }
     
-    @PutMapping
-    public void updateMember(@Validated @RequestBody Member member) {
-    	memberRepository.save(member);
+    @PutMapping("/{id}")
+    public Member updateMember(@PathVariable long id, @Validated @RequestBody Member newMember) {
+        Member updatedMember = memberRepository.findById(id)
+                .map(member -> {
+                    member.setName(newMember.getName());
+                    member.setStatus(newMember.getStatus());
+                    return memberRepository.save(member);
+                })
+                .orElseGet(() -> {
+                    return null;
+                });
+
+        return updatedMember;
     }
 
     @PutMapping("/{id}")
