@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { getMembers } from '../../api';
 import Transaction from '../transaction/transaction';
 import styles from './budget.module.css';
 
@@ -7,6 +8,15 @@ const Budget = ({ budgetData }) => {
 
   return (
     <div className={styles.budget}>
+      <div>
+        {
+          members.map((member) => <p>
+            {
+              member.name
+            }
+          </p>)
+        }
+      </div>
       <h3 className={styles.title}>Budget</h3>
       <table className={styles.table}>
         <colgroup>
