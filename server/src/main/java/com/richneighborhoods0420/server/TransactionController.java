@@ -1,9 +1,15 @@
 package com.richneighborhoods0420.server;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+@Service
 @RestController
 @CrossOrigin
 @RequestMapping("api/transaction")
@@ -14,6 +20,20 @@ public class TransactionController {
 
     @GetMapping
     public Iterable<Transaction> findAllTransactions() { return transactionRepository.findAll(); }
+
+    @GetMapping("/balance")
+    public List<BalanceRow> makeBalanceRow() {
+        Iterable<Transaction> transactions = findAllTransactions();
+        List<BalanceRow> ret = new ArrayList<>();
+
+        double balance = 0;
+        for (Transaction transaction : transactions) {
+            balance += transaction.getAmount();
+            ret.add(new BalanceRow(transaction.getId(), transaction.getDate(), transaction.getDescription(), transaction.getAmount(), balance));
+        }
+
+        return ret;
+    }
 
     @GetMapping("/{id}")
     public Transaction findTransactionById(@PathVariable long id) {
