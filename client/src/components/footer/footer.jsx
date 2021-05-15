@@ -26,11 +26,3 @@ const Footer = () => {
 
 export default Footer;
 
-
-
-{/* <h3 className={styles.title}>What we learned</h3>
-<p>
-  Front-end: React, JavaScript, HTML, CSS, Redux, Postman <p />
-  Back-end: AWS, Linode, Firebase
-</p>
-<h3 className={styles.title}>What we're interested in</h3> */}

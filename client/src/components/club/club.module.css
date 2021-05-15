@@ -18,6 +18,10 @@
   padding: 20px;
 }
 
+.dream .title {
+  padding-bottom: 30px;
+}
+
 .images {
   display: flex;
   flex-direction: row;
@@ -26,6 +30,11 @@
 }
 
 img {
+  max-height: 200px;
+  padding: 4px;
+}
+
+.reality .images img {
   max-height: 200px;
   padding: 4px;
 }
@@ -41,5 +50,9 @@ img {
   img {
     max-height: 80px;
     padding: 2px;
+  }
+
+  .reality .images img {
+    max-height: 100px;
   }
 }

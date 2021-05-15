@@ -7,11 +7,11 @@ const Members = ({memberData}) => {
 
   return (
     <div className={styles.members}>
-      <h2 className={styles.title}>Members</h2>
+      <h3 className={styles.title}>Members</h3>
       <table className={styles.table}>
         <colgroup>
-          <col />
-          <col />
+          <col span="1" />
+          <col span="1" />
         </colgroup>
         <thead>
           <tr>
@@ -26,10 +26,11 @@ const Members = ({memberData}) => {
           }
         </tbody>
       </table>
+      <h3 className={styles.title}>Add Members</h3>
       <form className={styles.form}>
         <input type="text" defaultValue="Name"></input>
         <input type="text" defaultValue="Status"></input>
-        <button className={styles.button}>Add</button>
+        <button className={styles.button}>ADD</button>
       </form>
     </div>
   );

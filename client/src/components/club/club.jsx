@@ -19,7 +19,6 @@ const Club = () => {
           <img src={process.env.PUBLIC_URL + './images/raspberry_pi1.png'} alt=""></img>
           <img src={process.env.PUBLIC_URL + './images/raspberry_pi2.png'} alt=""></img>
           <img src={process.env.PUBLIC_URL + './images/raspberry_pi_top.png'} alt=""></img>
-          <img src={process.env.PUBLIC_URL + './images/care_and_love.png'} alt=""></img>
         </div>
       </section>
     </div>
