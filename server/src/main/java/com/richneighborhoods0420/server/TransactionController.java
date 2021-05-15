@@ -45,6 +45,11 @@ public class TransactionController {
     public Transaction createTransaction(@Validated @RequestBody Transaction transaction) {
         return transactionRepository.save(transaction);
     }
+    
+    @PutMapping
+    public void updateTransaction(@Validated @RequestBody Transaction transaction) {
+    	transactionRepository.save(transaction);
+    }
 
     @PutMapping("/{id}")
     public Transaction updateTransaction(@PathVariable long id, @Validated @RequestBody Transaction newTransaction) {
