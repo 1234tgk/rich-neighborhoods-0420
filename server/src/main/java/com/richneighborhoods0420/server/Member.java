@@ -10,16 +10,16 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-    private String expiry_date;
+    private String expiryDate;
 
     public Member() {
         this(0, null, null);
     }
 
-    public Member(long id, String name, String expiry_date) {
+    public Member(long id, String name, String expiryDate) {
         this.id = id;
         this.name = name;
-        this.expiry_date = expiry_date;
+        this.expiryDate = expiryDate;
     }
 
     public long getId() {
@@ -38,11 +38,11 @@ public class Member {
         this.name = name;
     }
 
-    public String getExpiry_date() {
-        return expiry_date;
+    public String getExpiryDate() {
+        return expiryDate;
     }
 
-    public void setExpiry_date(String expiry_date) {
-        this.expiry_date = expiry_date;
+    public void setExpiryDate(String expiryDate) {
+        this.expiryDate = expiryDate;
     }
 }
