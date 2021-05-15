@@ -10,7 +10,7 @@ const Transaction = ({ transaction }) => {
             {transaction.date}
           </td>
           <td>
-            {transaction.detail}
+            {transaction.description}
           </td>
           <td>
             ${transaction.amount}

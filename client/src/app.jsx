@@ -20,7 +20,7 @@ const App = () => {
           <Header />
           <Switch>
             <Route exact path="/"><Main /></Route>
-            <Route path="/budget"><Budget budgetData={budgetData} /></Route>
+            <Route path="/budget"><Budget /></Route>
             <Route path="/members"><Members /></Route>
             <Route path="/club"><Club /></Route>
             <Route path="/contributors"><Contributors /></Route>

@@ -3,16 +3,16 @@ export async function getBalances() {
     return res.json();
 }
 
-export async function createMember(description, amount) {
+export async function createTransaction(description, amount) {
     const date = new Date();
     const dateStr = date.getFullYear() + '-' + (date.getMonth() + 1).toString().padStart(2, '0') + '-' + date.getDate();
     const transaction = {
         'date': dateStr,
         description,
-        amount
+        'amount': parseFloat(amount)
     }
 
-    await fetch(new URL('/api/tranaction', process.env.REACT_APP_API_SERVER_URL), {
+    await fetch(new URL('/api/transaction', process.env.REACT_APP_API_SERVER_URL), {
         body: JSON.stringify(transaction),
         method: 'POST',
         headers: {
