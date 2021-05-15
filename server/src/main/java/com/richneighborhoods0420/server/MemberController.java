@@ -25,6 +25,21 @@ public class MemberController {
         return memberRepository.save(member);
     }
 
+    @PutMapping("/{id}")
+    public Member updateMember(@PathVariable long id, @Validated @RequestBody Member newMember) {
+        Member updatedMember = memberRepository.findById(id)
+                .map(member -> {
+                    member.setName(newMember.getName());
+                    member.setStatus(newMember.getStatus());
+                    return memberRepository.save(member);
+                })
+                .orElseGet(() -> {
+                    return null;
+                });
+
+        return updatedMember;
+    }
+
     // no need to delete member, but here it is anyway
     @DeleteMapping("/{id}")
     public void deleteMember(@PathVariable long id) {
