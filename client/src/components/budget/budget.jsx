@@ -31,10 +31,12 @@ const Budget = ({ budgetData }) => {
           }
         </tbody>
       </table>
+      <h3 className={styles.title}>Add Transaction</h3>
       <form className={styles.form}>
         <input type="text" defaultValue="Date"></input>
         <input type="text" defaultValue="Description"></input>
-        <button className={styles.button}>Add</button>
+        <input type="text" defaultValue="Amount"></input>
+        <button className={styles.button}>ADD</button>
       </form>
     </div>
   );

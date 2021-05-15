@@ -13,10 +13,10 @@ const Transaction = ({ transaction }) => {
             {transaction.detail}
           </td>
           <td>
-            {transaction.amount}
+            ${transaction.amount}
           </td>
           <td>
-            {transaction.balance}
+            ${transaction.balance}
           </td>
         </>
       }

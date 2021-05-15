@@ -29,7 +29,8 @@ const Contributors = () => {
       <section className={styles.stack}>
         <h3 className={styles.title}>Stack</h3>
         <ul className={styles.content}>
-          <li>React (Router, Styled Components), Linode, Heroku</li>
+          <li>React (Router, Styled Components), JS, HTML, CSS, Adobe</li>
+          <li>Linode, Heroku</li>
         </ul>
       </section>    
     </div>

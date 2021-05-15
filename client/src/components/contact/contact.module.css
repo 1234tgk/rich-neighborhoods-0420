@@ -1,0 +1,51 @@
+.contact {
+  width: 100%;
+  margin-bottom: 80px;
+  /* margin: auto; */
+}
+/* 
+.social {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+} */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* margin: auto; */
+}
+
+.name {
+  display: flex;
+  width: 500px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.introduction,
+.stack,
+.source {
+  padding-bottom: 20px;
+}
+
+.title {
+  font-weight: 450;
+  text-decoration: underline;
+  text-underline-position: under;
+  padding: 20px;
+}
+
+.content {
+  text-indent: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .name {
+    width: 400px;
+    flex-direction: column;
+  }
+}
