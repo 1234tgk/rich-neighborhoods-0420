@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+
 @RestController
 @CrossOrigin
 @RequestMapping("api/member")
@@ -26,11 +28,10 @@ public class MemberController {
     }
 
     @PutMapping("/{id}")
-    public Member updateMember(@PathVariable long id, @Validated @RequestBody Member newMember) {
+    public Member activateMember(@PathVariable long id) {
         Member updatedMember = memberRepository.findById(id)
                 .map(member -> {
-                    member.setName(newMember.getName());
-                    member.setStatus(newMember.getStatus());
+                    member.setExpiry_date(LocalDate.now().plusMonths(1).toString());
                     return memberRepository.save(member);
                 })
                 .orElseGet(() -> {

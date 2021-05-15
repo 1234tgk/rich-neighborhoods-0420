@@ -7,19 +7,19 @@ import javax.persistence.*;
 public class Member {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-    private String status;
+    private String expiry_date;
 
     public Member() {
         this(0, null, null);
     }
 
-    public Member(long id, String name, String status) {
+    public Member(long id, String name, String expiry_date) {
         this.id = id;
         this.name = name;
-        this.status = status;
+        this.expiry_date = expiry_date;
     }
 
     public long getId() {
@@ -38,11 +38,11 @@ public class Member {
         this.name = name;
     }
 
-    public String getStatus() {
-        return status;
+    public String getExpiry_date() {
+        return expiry_date;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setExpiry_date(String expiry_date) {
+        this.expiry_date = expiry_date;
     }
 }
