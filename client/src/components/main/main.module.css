@@ -1,3 +1,47 @@
 .main {
-  background: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  position: fixed;
+  top: 130px;
+  left: 40px;
+}
+
+.image {
+  max-width: 600px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.introduction {
+  width: 700px;
+  padding: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .image {
+    max-width: 400px;
+  }
+
+  .introduction {
+    max-width: 600px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .image {
+    max-width: 300px;
+  }
+
+  .introduction {
+    max-width: 350px;
+  }
 }

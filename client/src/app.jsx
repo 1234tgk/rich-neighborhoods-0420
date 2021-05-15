@@ -16,9 +16,9 @@ const App = () => {
       <div className={styles.container}>
         <BrowserRouter>
           <Switch>
-            {/* <Route exact path="/"><Main /></Route> */}
+            <Route exact path="/"><Main /></Route>
             <Route path="/budget"><Budget budgetData={budgetData} /></Route>
-            {/* <Route path="/dashboard"><Members memberData={memberData} /></Route> */}
+            <Route path="/members"><Members memberData={memberData} /></Route>
           </Switch>
         </BrowserRouter>
       </div>
