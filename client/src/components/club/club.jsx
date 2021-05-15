@@ -9,7 +9,7 @@ const Club = () => {
         <section className={styles.images}>
           <img src={process.env.PUBLIC_URL + './images/custom_laptop1.jpg'} alt=""></img>
           <img src={process.env.PUBLIC_URL + './images/custom_laptop2.PNG'} alt=""></img>
-          <img src={process.env.PUBLIC_URL + './images/smart_home.png'} alt=""></img>
+          <img src={process.env.PUBLIC_URL + './images/smart_mirror2.png'} alt=""></img>
         </section>
       </section>
 
@@ -18,8 +18,8 @@ const Club = () => {
         <div className={styles.images}>
           <img src={process.env.PUBLIC_URL + './images/raspberry_pi1.png'} alt=""></img>
           <img src={process.env.PUBLIC_URL + './images/raspberry_pi2.png'} alt=""></img>
+          <img src={process.env.PUBLIC_URL + './images/raspberry_pi_top.png'} alt=""></img>
           <img src={process.env.PUBLIC_URL + './images/care_and_love.png'} alt=""></img>
-          <img src={process.env.PUBLIC_URL + './images/money.png'} alt=""></img>
         </div>
       </section>
     </div>

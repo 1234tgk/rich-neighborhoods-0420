@@ -9,11 +9,11 @@ const Footer = () => {
         <ul className={styles.menu}>
           <li>ABOUT</li>
           <Link to="/club"><li className={styles.list}>Club</li></Link>
-          <Link to="/"><li className={styles.list}>Contributors</li></Link>
+          <Link to="/contributors"><li className={styles.list}>Contributors</li></Link>
         </ul>
         <ul className={styles.menu}>
           <li>CONTACT</li>
-          <Link to="/"><li className={styles.list}>Social</li></Link>
+          <Link to="/contact"><li className={styles.list}>Social</li></Link>
         </ul>
       </div>
       <div className={styles.right}>

@@ -9,6 +9,8 @@ import Footer from './components/footer/footer';
 import memberData from '../src/data/member';
 import budgetData from '../src/data/budget';
 import Club from './components/club/club';
+import Contributors from './components/contributors/contributors';
+import Contact from './components/contact/contact';
 
 const App = () => {
   return (
@@ -21,6 +23,8 @@ const App = () => {
             <Route path="/budget"><Budget budgetData={budgetData} /></Route>
             <Route path="/members"><Members memberData={memberData} /></Route>
             <Route path="/club"><Club /></Route>
+            <Route path="/contributors"><Contributors /></Route>
+            <Route path="/contact"><Contact /></Route>
           </Switch>
           <Footer />
         </BrowserRouter>

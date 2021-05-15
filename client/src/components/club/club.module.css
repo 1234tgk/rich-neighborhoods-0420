@@ -26,13 +26,20 @@
 }
 
 img {
-  height: 200px;
+  max-height: 200px;
   padding: 4px;
 }
 
 @media screen and (max-width: 768px) {
   img {
-    height: 100px;
+    max-height: 120px;
+    padding: 2px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  img {
+    max-height: 80px;
     padding: 2px;
   }
 }
