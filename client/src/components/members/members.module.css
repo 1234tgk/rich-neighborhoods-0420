@@ -59,13 +59,13 @@
   width: 40%;
 }
 
-.button {
+.form input.button {
   width: 80px;
   height: 28px;
   border: 0;
   padding: 2px;
   margin: 10px;
-  background: var(--color-black);
+  background-color: var(--color-black);
   color: var(--color-white);
 }
 
