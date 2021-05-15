@@ -1,10 +1,30 @@
 import React, { useEffect, useState } from 'react';
-import { getMembers } from '../../api';
+import { getBalances, createTransaction } from '../../apiBudget';
 import Transaction from '../transaction/transaction';
 import styles from './budget.module.css';
 
-const Budget = ({ budgetData }) => {
-  const [budget, setBudget] = useState(budgetData);
+const Budget = () => {
+  const [budget, setBudget] = useState([]);
+  const [descriptionInput, setDescriptionInput] = useState('');
+  const [amountInput, setAmountInput] = useState('');
+
+  useEffect(() => {
+    getBalances().then((res) => {
+      setBudget(res);
+    });
+  },[]);
+
+  const addHandler = (event) => {
+    event.preventDefault();
+
+    createTransaction(descriptionInput, amountInput).then(() => {
+      getBalances().then((res) => {
+        setBudget(res);
+      });
+      setDescriptionInput('');
+      setAmountInput('');
+    })
+  }
 
   return (
     <div className={styles.budget}>
@@ -32,11 +52,10 @@ const Budget = ({ budgetData }) => {
         </tbody>
       </table>
       <h3 className={styles.title}>Add Transaction</h3>
-      <form className={styles.form}>
-        <input type="text" defaultValue="Date"></input>
-        <input type="text" defaultValue="Description"></input>
-        <input type="text" defaultValue="Amount"></input>
-        <button className={styles.button}>ADD</button>
+      <form onSubmit={addHandler} className={styles.form}>
+        <input type="text" placeholder="Description" value={descriptionInput} onChange={e => setDescriptionInput(e.target.value)}/>
+        <input type="text" placeholder="Amount" value={amountInput} onChange={e => setAmountInput(e.target.value)}/>
+        <input type="submit" className={styles.button} value="ADD" />
       </form>
     </div>
   );
