@@ -3,10 +3,12 @@ export async function getMembers() {
     return res.json();
 }
 
-export async function createMember(name, status) {
+export async function createMember(name) {
+    const date = new Date();
+    const dateStr = date.getFullYear() + '-' + (date.getMonth() + 1).toString().padStart(2, '0') + '-' + date.getDate();
     const member = {
         name,
-        status
+        'expiryDate': dateStr
     }
 
     await fetch(new URL('/api/member', process.env.REACT_APP_API_SERVER_URL), {
@@ -18,9 +20,16 @@ export async function createMember(name, status) {
     });
 }
 
+export async function activateMember(id) {
+    await fetch(new URL(`api/member/${id}`, process.env.REACT_APP_API_SERVER_URL), {
+        method: 'PUT'
+    });
+}
+
 // probably won't need it, but here it is anyway
 export async function deleteMember(id) {
     await fetch(new URL(`/api/member/${id}`, process.env.REACT_APP_API_SERVER_URL), {
         method: 'DELETE'
     });
+    
 }

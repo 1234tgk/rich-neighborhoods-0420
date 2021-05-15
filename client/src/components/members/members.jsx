@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { createMember, getMembers } from '../../api';
+import { createMember, getMembers } from '../../apiMember';
 import Member from '../member/member';
 import styles from './members.module.css';
 
 const Members = () => {
   const [members, setMembers] = useState([]);
   const [nameInput, setNameInput] = useState('');
-  const [statusInput, setStatusInput] = useState('');
+  // const [statusInput, setStatusInput] = useState('');
   useEffect(() => {
     getMembers().then((res) => {
       setMembers(res);
@@ -16,12 +16,12 @@ const Members = () => {
   const addHandler = (event) => {
     event.preventDefault();
 
-    createMember(nameInput, statusInput).then(() => {
+    createMember(nameInput).then(() => {
       getMembers().then((res) => {
         setMembers(res);
       });
       setNameInput('');
-      setStatusInput('');
+      // setStatusInput('');
     });
   };
 
@@ -49,7 +49,7 @@ const Members = () => {
       <h3 className={styles.title}>Add Members</h3>
       <form onSubmit={addHandler} className={styles.form}>
         <input type="text" placeholder="Name" value={nameInput} onChange={e => setNameInput(e.target.value)} />
-        <input type="text" placeholder="Status" value={statusInput} onChange={e => setStatusInput(e.target.value)} />
+        {/* <input type="text" placeholder="Status" value={statusInput} onChange={e => setStatusInput(e.target.value)} /> */}
         <input type="submit" className={styles.button} value="ADD"/>
       </form>
     </div>
