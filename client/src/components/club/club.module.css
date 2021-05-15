@@ -1,0 +1,45 @@
+.club {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
+.dream,
+.reality {
+  padding-bottom: 40px;
+}
+
+.title {
+  font-weight: 450;
+  text-decoration: underline;
+  text-underline-position: under;
+  padding: 20px;
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  max-height: 200px;
+  padding: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  img {
+    max-height: 120px;
+    padding: 2px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  img {
+    max-height: 80px;
+    padding: 2px;
+  }
+}

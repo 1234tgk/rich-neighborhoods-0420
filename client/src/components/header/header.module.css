@@ -42,6 +42,18 @@
 
 .menu li:hover {
   text-decoration: underline;
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: 1.8px;
   text-underline-offset: 4px;
+}
+
+@media screen and (max-width: 400px) {
+  .logo {
+    height: 20px;
+    margin-top: 0px;
+    margin-right: 10px;
+  }
+
+  .name {
+    font-size: 14px;
+  }
 }

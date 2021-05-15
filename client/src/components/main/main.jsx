@@ -4,9 +4,8 @@ import styles from './main.module.css';
 const Main = () => {
   return (
     <div className={styles.main}>
-      {/* <h3 className={styles.title}>Main</h3> */}
       <section className={styles.content}>
-        <img className={styles.image} src={process.env.PUBLIC_URL + './images/smart_mirror.PNG'} alt=""></img>
+        <img className={styles.image} src={process.env.PUBLIC_URL + './images/smart_mirror1.PNG'} alt=""></img>
         <p className={styles.introduction}>
           Hi! We are 4 brilliant, kind, cute students - Jean, Billy, Gary, Kwonmin - studying computer programming at York University / Seneca College. <br /><br /> 
           
