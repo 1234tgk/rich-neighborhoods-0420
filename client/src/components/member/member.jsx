@@ -5,21 +5,10 @@ import styles from './member.module.css';
 const Member = ({member}) => {
   const date = new Date();
   const dateStr = date.getFullYear() + '-' + (date.getMonth() + 1).toString().padStart(2, '0') + '-' + date.getDate();
-
-  const [memberStatus, setMemberStatus] = useState('inactive');
-
-  useEffect(() => {
-    if (member.expiryDate > dateStr) {
-      setMemberStatus('active');
-    } else {
-      setMemberStatus('inactive');
-    }
-  })
+  const memberStatus = member.expiryDate > dateStr ? 'active' : 'inactive';
 
   const buttonHandler = () => {
-    activateMember(member.id).then(() => {
-      setMemberStatus('active');
-    });
+    activateMember(member.id);
   }
 
   return (
@@ -33,7 +22,7 @@ const Member = ({member}) => {
             {memberStatus}
           </td>
           <td>
-            <button onClick={buttonHandler}>
+            <button disabled={memberStatus === 'active'} onClick={buttonHandler}>
               Activate
             </button>
           </td>
