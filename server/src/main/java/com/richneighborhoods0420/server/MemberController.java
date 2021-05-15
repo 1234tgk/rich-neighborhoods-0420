@@ -24,6 +24,11 @@ public class MemberController {
     public Member createMember(@Validated @RequestBody Member member) {
         return memberRepository.save(member);
     }
+    
+    @PutMapping
+    public void updateMember(@Validated @RequestBody Member member) {
+    	memberRepository.save(member);
+    }
 
     // no need to delete member, but here it is anyway
     @DeleteMapping("/{id}")
