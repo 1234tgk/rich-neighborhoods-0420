@@ -1,11 +1,12 @@
 import React from 'react';
 import styles from './main.module.css';
+import smartMirror1 from '../../assets/images/smart_mirror1.png';
 
 const Main = () => {
   return (
     <div className={styles.main}>
       <section className={styles.content}>
-        <img className={styles.image} src={process.env.PUBLIC_URL + './images/smart_mirror1.PNG'} alt=""></img>
+        <img className={styles.image} src={smartMirror1} alt=""></img>
         <p className={styles.introduction}>
           Hi! We are 4 brilliant, kind, cute students - Jean, Billy, Gary, Kwonmin - studying computer programming at York University / Seneca College. <br /><br /> 
           
