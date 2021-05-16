@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import styles from './app.module.css';
 import Header from './components/header/header';
@@ -6,8 +5,6 @@ import Budget from './components/budget/budget';
 import Main from './components/main/main';
 import Members from './components/members/members';
 import Footer from './components/footer/footer';
-import memberData from '../src/data/member';
-import budgetData from '../src/data/budget';
 import Club from './components/club/club';
 import Contributors from './components/contributors/contributors';
 import Contact from './components/contact/contact';
