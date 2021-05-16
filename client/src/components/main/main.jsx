@@ -8,15 +8,13 @@ const Main = () => {
       <section className={styles.content}>
         <img className={styles.image} src={smartMirror1} alt=""></img>
         <p className={styles.introduction}>
-          Hi! We are 4 brilliant, kind, cute students - Jean, Billy, Gary, Kwonmin - studying computer programming at York University / Seneca College. <br /><br /> 
-          
-          We are ready to win the prize (The Raspberry Pi Kit) and start working on our new projects!
-          We want to make various creative things such as smart home devices (mirrors, lights, vacuums) like Tony Stark's home, Talking Tom, and custom-made laptops with acrylic box/leather/ceramic and paint it with beautiful colors! <br /><br />
+        Welcome to the Elegant Custom Electronics Club! We are 4 brilliant, kind, cute students - Jean, Billy, Gary, Kwonmin - studying computer programming at York University / Seneca College. <br /><br />
 
-          This website is to manage our budget and welcome a new member on our board.
-          We are open to any feedback / idea / job opportunities. <br /><br />
+        We are ready to win the Raspberry Pi 4 Kit! With that in hand, we want to make various creative things such as smart home devices similar to those found in Tony Stark's home, or even custom-made laptops with acrylic/leather/ceramic boxes and paint them beautiful colors! <br /><br />
 
-          Please feel free to email us to jeankang.dev@gmail.com for any inquiries!
+        This website was made for the Neighborhood Hacks Hackathon hosted by Major League Hacking! You can add and delete Transactions on the Budget page, and add new Members on the Member Page. New members will be inactive by default, and can be set to be active by clicking the Activate button. Active members will automatically become inactive after a month of being active. <br /><br />
+
+        Feel free to contact us if you have any feedback, ideas or job opportunities! Our socials can be found below. <br /><br />
         </p>
       </section>
     </div>

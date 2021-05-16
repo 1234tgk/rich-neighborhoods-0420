@@ -1,6 +1,10 @@
 .contributors {
   width: 100%;
   margin: auto;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .content {

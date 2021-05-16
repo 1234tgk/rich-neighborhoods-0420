@@ -14,3 +14,11 @@
   color: var(--color-white);
   cursor: pointer;
 }
+
+@media screen and (max-width: 400px) {
+  .activate,
+  .delete {
+    font-size: 10px;
+    width: 50px;
+  }
+}

@@ -62,7 +62,7 @@
 
 @media screen and (max-width: 400px) {
   .table {
-    max-width: 350px;
+    max-width: 300px;
   }
 
   .form {
