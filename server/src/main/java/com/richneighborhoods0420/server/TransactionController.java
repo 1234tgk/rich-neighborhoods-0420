@@ -62,22 +62,6 @@ public class TransactionController {
         return updatedTransaction;
     }
 
-    @PutMapping("/{id}")
-    public Transaction updateTransaction(@PathVariable long id, @Validated @RequestBody Transaction newTransaction) {
-        Transaction updatedTransaction = transactionRepository.findById(id)
-                .map(transaction -> {
-                    transaction.setAmount(newTransaction.getAmount());
-                    transaction.setDate(newTransaction.getDate());
-                    transaction.setDescription(newTransaction.getDescription());
-                    return transactionRepository.save(transaction);
-                })
-                .orElseGet(() -> {
-                    return null;
-                });
-
-        return updatedTransaction;
-    }
-
     @DeleteMapping("/{id}")
     public void deleteTransaction(@PathVariable long id) {
         transactionRepository.deleteById(id);
