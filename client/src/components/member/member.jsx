@@ -23,8 +23,13 @@ const Member = ({member, onActivated}) => {
             {memberStatus}
           </td>
           <td>
-            <button disabled={memberStatus === 'active'} onClick={buttonHandler}>
+            <button className={styles.activate} disabled={memberStatus === 'active'} onClick={buttonHandler}>
               Activate
+            </button>
+          </td>
+          <td>
+            <button className={styles.delete} disabled={memberStatus === 'active'} onClick={buttonHandler}>
+              Delete
             </button>
           </td>
         </>

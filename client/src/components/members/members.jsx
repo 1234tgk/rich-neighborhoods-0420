@@ -40,12 +40,14 @@ const Members = () => {
           <col span="1" />
           <col span="1" />
           <col span="1" />
+          <col span="1" />
         </colgroup>
         <thead>
           <tr>
             <th>Name</th>
             <th>Status</th>
             <th>Activate</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>

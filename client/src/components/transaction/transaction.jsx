@@ -26,7 +26,7 @@ const Transaction = ({ transaction, onDelete }) => {
             ${transaction.balance}
           </td>
           <td>
-            <button onClick={handleDelete}>
+            <button className={styles.delete} onClick={handleDelete}>
               Delete
             </button>
           </td>
