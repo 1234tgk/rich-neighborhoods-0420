@@ -1,58 +1,28 @@
 # Club Ledger App Project
 
-## Instructions for Devs
+## Introduction
+This is a project for NeighborHood Hacks hosted by Major League Hacking (MLH).
 
-### Git WorkFlow:
-To make your branch...
-```
-git pull
-git branch <branch-name>
-git checkout <branch-name>
-```
-(Shorthand of last two commands is: `git checkout -b <branch-name>`)
-  \
-If at some point you need to update your master during your work...
-```
-git add -all
-git commit -m "<commit-message>"
-git checkout main
-git pull
-git checkout <branch-name>
-git rebase main
-```
-  \
-Once you make changes to your branches...
-```
-git add --all
-git commit
-```
-(or `git commit -m "<commit-message>`")
-```
-git push
-```
-(if this causes error, do whatever git tells you to)\
-(If I need to merge your change to the origin, create a pull request.)
+The motivation for this project was to create a website that hosts a simple Ledger that a club or a group\
+can use to finance their budgets and fundings. The website also holds a list of members, active and\
+inactive, and when an inactive member is turned to an active member (presumably by paying $20 membership\
+fee), the membership fee is automatically added to the budget of the club. The website is for those\
+having hard time managing their clubs' budgets. 
 
-### MySQL Table Creation
-If using the database for the first time, run this sql script:\
-(Database name can be anything: just remember it for the further use)
-```sql
-create schema testneighbor;
+## How to use
+Refer to README.md file located at both client and server folder to set up both front and back environment.\
+The description and the amount of transaction (positive amount for income, negative amount for expense) can\
+be put to create new transaction of the club.
 
-use testneighbor;
+For flexibility, each transaction can be deleted, even the auto-generated ones from membership fee.
 
-create table member (
-id bigint not null auto_increment,
-name varchar(50) not null,
-expiry_date varchar(12) not null,
-primary key (id)
-);
+New member can be created with a new name, and he/she will start as an inactive member. Click the activation\
+button to activate new member. The member will become inactive again once one month from the activation date\
+has passed.
 
-create table transaction (
-id bigint not null auto_increment,
-date varchar(12) not null,
-description varchar(50) not null,
-amount double(19,4) not null,
-primary key (id)
-);
-```
+Deleting a member is also possible if needed.
+
+## Current public build
+Currently, the project is in public domain, powered by Linode (https://www.linode.com).
+
+The website can be found here: http://li2280-24.members.linode.com/
