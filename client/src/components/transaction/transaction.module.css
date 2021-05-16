@@ -5,3 +5,9 @@ td:nth-child(3) {
 td:nth-child(4) {
   text-align: right;
 }
+
+.delete {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
