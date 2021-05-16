@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { activateMember } from '../../apiMember';
 import styles from './member.module.css';
 
 const Member = ({member, onActivated}) => {
