@@ -30,12 +30,6 @@ public class MemberController {
 
     @PostMapping
     public Member createMember(@Validated @RequestBody Member member) {
-    	// update transaction list with member's payments
-        Transaction transaction = new Transaction(member.getId() + idLimit, // Arbitrary Number, max before id's get overwritten
-        										LocalDate.now().toString(),
-        										"Membership Fee for " + member.getName(), 
-        										membershipFee); // Monthly membership fee, MAGIC NUMBER
-        transactionRepository.save(transaction);
         return memberRepository.save(member);
     }
  
