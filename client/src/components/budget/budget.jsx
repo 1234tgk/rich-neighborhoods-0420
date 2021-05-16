@@ -8,19 +8,21 @@ const Budget = () => {
   const [descriptionInput, setDescriptionInput] = useState('');
   const [amountInput, setAmountInput] = useState('');
 
-  useEffect(() => {
+  const refetch = () => {
     getBalances().then((res) => {
       setBudget(res);
     });
+  };
+
+  useEffect(() => {
+    refetch();
   },[]);
 
   const addHandler = (event) => {
     event.preventDefault();
 
     createTransaction(descriptionInput, amountInput).then(() => {
-      getBalances().then((res) => {
-        setBudget(res);
-      });
+      refetch();
       setDescriptionInput('');
       setAmountInput('');
     })
@@ -35,6 +37,7 @@ const Budget = () => {
           <col />
           <col />
           <col />
+          <col />
         </colgroup>
         <thead>
           <tr>
@@ -42,12 +45,13 @@ const Budget = () => {
             <th>Description</th>
             <th>Amount</th>
             <th>Balance</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
           {
             budget &&
-            budget.map(transaction => <Transaction key={transaction.id} transaction={transaction} />)
+            budget.map(transaction => <Transaction key={transaction.id} transaction={transaction} onDelete={refetch} />)
           }
         </tbody>
       </table>

@@ -26,7 +26,6 @@ export async function activateMember(id) {
     });
 }
 
-// probably won't need it, but here it is anyway
 export async function deleteMember(id) {
     await fetch(new URL(`/api/member/${id}`, process.env.REACT_APP_API_SERVER_URL), {
         method: 'DELETE'
