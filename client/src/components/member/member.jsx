@@ -9,7 +9,7 @@ const Member = ({member, onActivated}) => {
   const buttonHandler = () => {
     // activateMember(member.id);
     // memberStatus = 'active';
-    onActivated(member.id, memberStatus);
+    onActivated(member.id);
   }
 
   return (

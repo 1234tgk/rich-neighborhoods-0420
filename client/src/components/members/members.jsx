@@ -24,10 +24,10 @@ const Members = () => {
     });
   };
 
-  const updateMembers = (id, status) => {
-    activateMember(id);
-    status = 'active';
-    getMembers().then((res) => {
+  const updateMembers = (id) => {
+    activateMember(id).then(() => {
+      return getMembers();
+    }).then((res) => {
       setMembers(res);
     });
   }
