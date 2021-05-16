@@ -10,18 +10,25 @@
 }
 
 .table {
-  table-layout: fixed;
-  width: 600px;
+  width: 700px;
   margin: 0 auto;
   padding: 10px 20px;
 }
 
 .table colgroup col:nth-child(1) {
-  width: 50%;
+  width: 30%;
 }
 
 .table colgroup col:nth-child(2) {
-  width: 50%;
+  width: 30%;
+}
+
+.table colgroup col:nth-child(3) {
+  width: 20%;
+}
+
+.table colgroup col:nth-child(4) {
+  width: 20%;
 }
 
 .members thead th {
@@ -38,7 +45,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 600px;
+  width: 700px;
   margin: 0 auto;
   padding: 20px;
 }

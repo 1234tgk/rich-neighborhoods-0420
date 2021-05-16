@@ -1,7 +1,16 @@
-.name {
-  width: 100%;
+.member td:nth-child(3) {
+  display: flex;
+  justify-content: center;
 }
 
-.state {
-  width: 100%;
+.activate,
+.delete {
+  width: 80px;
+  height: 28px;
+  border: 0;
+  padding: 2px;
+  margin: 10px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  cursor: pointer;
 }
