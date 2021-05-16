@@ -13,13 +13,17 @@ const Members = () => {
     });
   },[]);
 
+  const refetch = () => {
+    getMembers().then((res) => {
+      setMembers(res);
+    });
+  }
+
   const addHandler = (event) => {
     event.preventDefault();
 
     createMember(nameInput).then(() => {
-      getMembers().then((res) => {
-        setMembers(res);
-      });
+      refetch();
       setNameInput('');
     });
   };
@@ -53,7 +57,7 @@ const Members = () => {
         <tbody>
           {
             members &&
-            members.map(member => <Member key={member.id} member={member} onActivated={updateMembers} />)
+            members.map(member => <Member key={member.id} member={member} onActivated={updateMembers} onDelete={refetch} />)
           }
         </tbody>
       </table>
