@@ -45,7 +45,7 @@ public class TransactionController {
     public Transaction createTransaction(@Validated @RequestBody Transaction transaction) {
         return transactionRepository.save(transaction);
     }
-
+    
     @PutMapping("/{id}")
     public Transaction updateTransaction(@PathVariable long id, @Validated @RequestBody Transaction newTransaction) {
         Transaction updatedTransaction = transactionRepository.findById(id)
@@ -58,7 +58,7 @@ public class TransactionController {
                 .orElseGet(() -> {
                     return null;
                 });
-
+        
         return updatedTransaction;
     }
 

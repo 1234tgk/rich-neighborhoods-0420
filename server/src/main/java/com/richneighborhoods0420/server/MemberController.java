@@ -13,6 +13,12 @@ public class MemberController {
 
     @Autowired
     private MemberRepository memberRepository;
+    
+    @Autowired
+    private TransactionRepository transactionRepository;
+    
+    public long idLimit = 1000;
+    public double membershipFee = 20.0;
 
     @GetMapping
     public Iterable<Member> findAllMembers() { return memberRepository.findAll(); }
@@ -26,12 +32,20 @@ public class MemberController {
     public Member createMember(@Validated @RequestBody Member member) {
         return memberRepository.save(member);
     }
-
+ 
     @PutMapping("/{id}")
     public Member activateMember(@PathVariable long id) {
         Member updatedMember = memberRepository.findById(id)
                 .map(member -> {
                     member.setExpiryDate(LocalDate.now().plusMonths(1).toString());
+                    // update transaction list with member's payments
+                    Transaction transaction = new Transaction();
+					transaction.setDate(LocalDate.now().toString());
+					transaction.setDescription("Membership Fee for " + member.getName());
+					transaction.setAmount(membershipFee); 
+					
+                    transactionRepository.save(transaction);
+                    
                     return memberRepository.save(member);
                 })
                 .orElseGet(() -> {
