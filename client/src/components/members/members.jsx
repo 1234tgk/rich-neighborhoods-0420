@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { createMember, getMembers } from '../../apiMember';
+import { createMember, getMembers, activateMember } from '../../apiMember';
 import Member from '../member/member';
 import styles from './members.module.css';
 
 const Members = () => {
   const [members, setMembers] = useState([]);
   const [nameInput, setNameInput] = useState('');
+
   useEffect(() => {
     getMembers().then((res) => {
       setMembers(res);
@@ -22,6 +23,14 @@ const Members = () => {
       setNameInput('');
     });
   };
+
+  const updateMembers = (id, status) => {
+    activateMember(id);
+    status = 'active';
+    getMembers().then((res) => {
+      setMembers(res);
+    });
+  }
 
   return (
     <div className={styles.members}>
@@ -40,7 +49,7 @@ const Members = () => {
         <tbody>
           {
             members &&
-            members.map(member => <Member key={member.id} member={member} />)
+            members.map(member => <Member key={member.id} member={member} onActivated={updateMembers} />)
           }
         </tbody>
       </table>
