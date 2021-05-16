@@ -27,6 +27,11 @@ td:nth-child(5) {
 }
 
 @media screen and (max-width: 400px) {
+  .delete {
+    font-size: 10px;
+    width: 50px;
+  }
+
   .button {
     font-size: 10px;
     width: 50px;

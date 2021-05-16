@@ -1,21 +1,14 @@
 .contact {
   width: 100%;
-  margin-bottom: 80px;
-  /* margin: auto; */
-}
-/* 
-.social {
+  height: 400px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-} */
+}
 
 .content {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* margin: auto; */
 }
 
 .name {
