@@ -39,10 +39,11 @@ public class MemberController {
                 .map(member -> {
                     member.setExpiryDate(LocalDate.now().plusMonths(1).toString());
                     // update transaction list with member's payments
-                    Transaction transaction = new Transaction(member.getId() + idLimit, // Arbitrary Number, max before id's get overwritten
-                    										LocalDate.now().toString(),
-                    										"Membership Fee for " + member.getName(), 
-                    										membershipFee); // Monthly membership fee, MAGIC NUMBER
+                    Transaction transaction = new Transaction();
+					transaction.setDate(LocalDate.now().toString());
+					transaction.setDescription("Membership Fee for " + member.getName());
+					transaction.setAmount(membershipFee); 
+					
                     transactionRepository.save(transaction);
                     
                     return memberRepository.save(member);
