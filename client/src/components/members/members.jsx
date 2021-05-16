@@ -39,11 +39,13 @@ const Members = () => {
         <colgroup>
           <col span="1" />
           <col span="1" />
+          <col span="1" />
         </colgroup>
         <thead>
           <tr>
             <th>Name</th>
             <th>Status</th>
+            <th>Activate</th>
           </tr>
         </thead>
         <tbody>

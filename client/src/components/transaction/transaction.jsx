@@ -1,7 +1,14 @@
 import React from 'react';
+import { deleteTransaction } from '../../apiBudget';
 import styles from './transaction.module.css';
 
-const Transaction = ({ transaction }) => {
+const Transaction = ({ transaction, onDelete }) => {
+  const handleDelete = () => {
+    if (window.confirm('Do you really want to delete this transaction?')) {
+      deleteTransaction(transaction.id).then(onDelete);
+    }
+  };
+
   return (
     <tr className={styles.transaction}>
       {
@@ -17,6 +24,11 @@ const Transaction = ({ transaction }) => {
           </td>
           <td>
             ${transaction.balance}
+          </td>
+          <td>
+            <button onClick={handleDelete}>
+              Delete
+            </button>
           </td>
         </>
       }

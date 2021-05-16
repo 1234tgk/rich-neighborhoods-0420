@@ -17,7 +17,7 @@ const Contributors = () => {
           </section>
           <section className={styles.name}>
             <li>Gary Kim</li>
-            <li>Back-end</li>
+            <li>Full-stack</li>
           </section>
           <section className={styles.name}>
             <li>Kwonmin Bok</li>
