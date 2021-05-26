@@ -1,5 +1,5 @@
 export async function getBalances() {
-    const res = await fetch(new URL('/api/transaction/balance', process.env.REACT_APP_API_SERVER_URL));
+    const res = await fetch('/api/transaction/balance');
     return res.json();
 }
 
@@ -12,7 +12,7 @@ export async function createTransaction(description, amount) {
         'amount': parseFloat(amount)
     }
 
-    await fetch(new URL('/api/transaction', process.env.REACT_APP_API_SERVER_URL), {
+    await fetch('/api/transaction', {
         body: JSON.stringify(transaction),
         method: 'POST',
         headers: {
@@ -22,7 +22,7 @@ export async function createTransaction(description, amount) {
 }
 
 export async function deleteTransaction(id) {
-    await fetch(new URL(`/api/transaction/${id}`, process.env.REACT_APP_API_SERVER_URL), {
+    await fetch(`/api/transaction/${id}`, {
         method: 'DELETE'
     });
     

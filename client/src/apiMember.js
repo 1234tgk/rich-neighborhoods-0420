@@ -1,5 +1,5 @@
 export async function getMembers() {
-    const res = await fetch(new URL('/api/member', process.env.REACT_APP_API_SERVER_URL));
+    const res = await fetch('/api/member');
     return res.json();
 }
 
@@ -11,7 +11,7 @@ export async function createMember(name) {
         'expiryDate': dateStr
     }
 
-    await fetch(new URL('/api/member', process.env.REACT_APP_API_SERVER_URL), {
+    await fetch('/api/member', {
         body: JSON.stringify(member),
         method: 'POST',
         headers: {
@@ -21,13 +21,13 @@ export async function createMember(name) {
 }
 
 export async function activateMember(id) {
-    await fetch(new URL(`api/member/${id}`, process.env.REACT_APP_API_SERVER_URL), {
+    await fetch(`/api/member/${id}`, {
         method: 'PUT'
     });
 }
 
 export async function deleteMember(id) {
-    await fetch(new URL(`/api/member/${id}`, process.env.REACT_APP_API_SERVER_URL), {
+    await fetch(`/api/member/${id}`, {
         method: 'DELETE'
     });
     
