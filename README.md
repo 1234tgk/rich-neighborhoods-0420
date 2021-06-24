@@ -21,8 +21,3 @@ button to activate new member. The member will become inactive again once one mo
 has passed.
 
 Deleting a member is also possible if needed.
-
-## Current public build
-Currently, the project is in public domain, powered by Linode (https://www.linode.com).
-
-The website can be found here: http://li2280-24.members.linode.com/
